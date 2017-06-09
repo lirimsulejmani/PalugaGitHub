@@ -1,0 +1,32 @@
+﻿<section class="container body-container">
+    <div class="row">
+        <div class="col-lg-12 text-center shop-title-store">
+            <h1 class="section-title">My Wishlist</h1>
+        </div>
+        <div class="col-lg-12 content-store no-padding">
+            <div id="dataMix" mix-it-up="" class="grid-product">
+                <div class="col-md-12 my-shop-animation" *ngFor="let item of books">
+                    <div class="box-prod group-book wishlist">
+                        <div class="box-img-book">
+                            <div class="col-md-2 box-list-prod">
+                                <img *ngIf="item.book.volumeInfo.imageLinks" src="{{item.book.volumeInfo.imageLinks.thumbnail}}" alt="{{item.book.volumeInfo.title}}" width="170" height="240">
+                                <img *ngIf="!item.book.volumeInfo.imageLinks" src="/images/no_book_cover.jpg" alt="{{item.book.volumeInfo.title}}" width="170" height="240">
+                            </div>
+                            <div class="col-md-7 book-desc">
+                                <h2 class="title-product">{{item.book.volumeInfo.title}}</h2>
+                                <p>{{item.book.volumeInfo.subtitle}}</p>
+                                <div class="author-txt"><span *ngFor="let author of item.book.volumeInfo.authors">{{author}}</span></div>
+                                <div class="category-txt"><span *ngFor="let category of item.book.volumeInfo.categories">{{category}}</span></div>
+                            </div>
+                            <div class="col-md-3 pull-right">
+                                <div class="btn-actions" (click)="delete(item)">
+                                    <button type="button" class="btn btn-add-cart"><i class="fa fa-trash-o"></i>Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

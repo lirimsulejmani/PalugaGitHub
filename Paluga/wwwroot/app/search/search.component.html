@@ -1,0 +1,33 @@
+﻿
+<section class="container">
+    <h1>Search results</h1>
+    <div *ngIf="book">
+        <h3>Books for {{book.searchText}}</h3>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{book.isbn}}</td>
+                    <td>{{book.title}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+    <!--<div id="content"></div>
+    <script>
+      function handleResponse(response) {
+      for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        // in production code, item.text should have the HTML entities escaped.
+        document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
+      }
+    }
+    </script>
+    <script src="https://www.googleapis.com/books/v1/volumes?q=harry+potter&callback=handleResponse"></script>-->

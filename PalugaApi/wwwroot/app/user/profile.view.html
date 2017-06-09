@@ -1,0 +1,66 @@
+﻿<section class="container body-container">
+    <div class="row">
+        <div class="col-lg-12 shop-title-store">
+            <h1 class="section-title">Profile</h1>
+        </div>
+        <div class="col-md-12 contact-page user-profile">
+            <div class="col-md-8 box-1-left" *ngIf="profile">
+                <form id="contact-form" role="form" #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)" novalidate>
+                    <div class="row">
+                        <div class="form-group col-lg-6">
+                            <label>Name</label>
+                            <input type="text" name="name" [(ngModel)]="profile.Name" placeholder="e.g. Jhon Smith" class="form-control">
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label>DateOfBirth</label>
+                            <input type="text" name="dob" [(ngModel)]="profile.DateOfBirth" placeholder="31/01/2017" class="form-control">
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group col-lg-6">
+                            <label>Address</label>
+                            <input type="text" name="address" [(ngModel)]="profile.Address" placeholder="e.g. Address name" class="form-control">
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label>Email</label>
+                            <input type="email" name="email" [(ngModel)]="profile.Email" placeholder="e.g. mail@example.com" class="form-control" readonly>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group col-lg-6">
+                            <label>School</label>
+                            <select class="select-opt form-control-select" name="school" [(ngModel)]="profile.SchoolId"  required>
+                                <option *ngFor="let school of schools" class="other-opt" [ngValue]="school.Id">{{school.Name}}</option>                                    
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label>Academic Discipline</label>
+                            <input type="text" name="academic_discipline" [(ngModel)]="profile.AcademicDiscipline" placeholder="e.g. Philosophy‎" class="form-control">
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group col-lg-6">
+                            <label>Education Degree</label>
+                            <select class="select-opt form-control-select" name="education_degree" [(ngModel)]="profile.EducationDegreeId" required>
+                                <option value="" disabled selected>Select Education Degree</option>
+                                <option *ngFor="let education of educationDegrees" class="other-opt" value="{{education.Id}}">{{education.Title}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label>Study Course</label>
+                            <input type="text" name="academic_discipline" [(ngModel)]="profile.StudyCourse" placeholder="e.g. Accounting & Finance" class="form-control">
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group col-lg-6">
+                            <label class="checkbox">
+                                <input type="checkbox" name="is_full_time" [(ngModel)]="profile.IsFullTime" class="form-control">IsFullTime
+                            </label>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <button type="submit" class="btn btn-primary bt-contact-submit">Update Profile</button>
+                            <p *ngIf="message">{{message}}</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 info-store-contact"></div>
+        </div>
+    </div>
+</section>

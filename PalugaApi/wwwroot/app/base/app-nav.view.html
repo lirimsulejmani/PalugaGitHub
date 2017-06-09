@@ -1,0 +1,104 @@
+﻿<section class="top-header">
+    <div class="container">
+        <div class="col-xs-6 col-md-6 top-user">
+        </div>
+        <div class="col-xs-6 col-md-6  mainmenu">
+            <nav>
+                <ul>
+                    <li>
+                    </li>
+                    <li *ngIf="!Student">
+                        <a href="" [routerLink]="['/signup']">SignUp</a>
+                    </li>
+                    <li *ngIf="!Student">
+                        <a href="" [routerLink]="['/login']">Login</a>
+                    </li>
+                    <li *ngIf="Student" class="mainmenu">
+                        <ul>
+                            <li class="exp-mega">
+                                <a href="javascript:void(0);">Hi {{Student.Name}}</a>
+                                <div class="mega-menu user-menu">
+                                    <ul>
+                                        <li>
+                                            <a href=""  [routerLink]="['/sellBook']">Selling Books</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Buying Books</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sell Archive</a>
+                                        </li>
+                                        <li>
+                                            <a href="" [routerLink]="['/wishlist']">Wishlist</a>
+                                        </li>
+                                        <li>
+                                            <a href="" [routerLink]="['/profile']">Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<header>
+    <div id="top" class="container box-logo-menu">
+        <div class="row">
+            <nav class="col-md-12 navigation-menu">
+                <div class="col-md-3 content-logo">
+                    <h2>Paluga</h2>
+                </div>
+                <div class="col-md-8 mainmenu">
+                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                        <ul class="menu-first-level">
+                            <li class="expand">
+                                <a href="" [routerLink]="['/']">Home</a>
+                            </li>
+                            <li class="expand">
+                                <a href="" [routerLink]="['/sellBook']">Sell Books</a>
+                            </li>
+                            <li><a href="" [routerLink]="['/about']">About Us</a></li>
+                            <li class="exp-mega">
+                                <a href="#">Schools</a>
+                                <div class="mega-menu">
+                                    <span>
+                                        <a class="mega-title" href="#">University 1</a>
+                                        <a href="products.html">Lorem Ipsum</a>
+                                        <a href="products.html">Lorem Ipsum</a>
+                                        <a href="products.html">Lorem Ipsum</a>
+                                        <a href="products.html">Lorem Ipsum</a>
+                                    </span>
+                                    <span>
+                                        <a class="mega-title" href="#">University 2</a>
+                                        <a href="products.html">Lorem Ipsum</a>
+                                        <a href="products.html">Lorem Ipsum</a>
+                                        <a href="products.html">Lorem Ipsum</a>
+                                        <a href="products.html">Lorem Ipsum</a>
+                                    </span>
+                                    <span>
+                                        <a class="mega-title" href="#">University 3</a>
+                                        <a href="products.html">Lorem Ipsum</a>
+                                        <a href="products.html">Lorem Ipsum</a>
+                                        <a href="products.html">Lorem Ipsum</a>
+                                        <a href="products.html">Lorem Ipsum</a>
+                                    </span>
+                                    <span class="mega-menu-img">
+                                        <a href="#"><img src="images/open-book.png" alt=""></a>
+                                    </span>
+                                </div>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>

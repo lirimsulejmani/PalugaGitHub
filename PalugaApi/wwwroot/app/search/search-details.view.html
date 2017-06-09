@@ -1,0 +1,189 @@
+﻿<section class="container page-details-product">
+
+
+        <!-- Google Result -->
+        <div class="row">
+            <div class="col-md-12 table-padding" *ngIf="book.id">
+                <div class="panel panel-info-full">
+                    <div class="list-product">
+                        <div class="col-md-3 my-shop-animation">
+                            <div class="box-prod">
+                                <div class="box-img-book">
+                                    <img *ngIf="book.volumeInfo.imageLinks" src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="{{book.volumeInfo.title}}" width="240" height="340">
+                                    <img *ngIf="!book.volumeInfo.imageLinks" src="/images/no_book_cover.jpg" alt="{{book.volumeInfo.title}}" width="240" height="340">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9 box-desc-detail">
+                            <h2 class="title-product">{{book.volumeInfo.title}}</h2>
+                            <p>{{book.volumeInfo.subtitle}}</p>
+                            <p class="author-txt"><span>Author: </span><span class="author-name" *ngFor="let author of book.volumeInfo.authors">{{author}}</span></p>
+                            <!--<p class="book-price"> $7.89<span> $8.89</span></p>-->
+                            <div class="box-btn-shop">
+                                <div class="bt-img" *ngIf="!isInWishlist">
+                                    <button type="button" class="btn btn-add-cart" (click)="addToWishlist(book)"><i class="fa fa-heart"></i>Add to Wishlist</button>
+                                </div>
+                                <div class="bt-img">
+                                    <button type="button" class="btn btn-add-cart"><i class="fa fa-shopping-bag"></i>Cotact Seller</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 detail-box-desc">
+                            <!--<div class="col-md-3"><h1 class="txt-info-vertical">Info</h1></div>-->
+
+                            <h2 class="headline" style="padding-left:15px;">Book information</h2>
+
+                            <div class="col-md-9 u-separator-right">
+                                <p class="cat-txt" *ngFor="let identity of book.volumeInfo.industryIdentifiers"><span>{{identity.type}}: </span>{{identity.identifier}}</p>
+                                <p class="cat-txt"><span>Pages: </span>{{book.volumeInfo.pageCount}}</p>
+                                <!--<p class="cat-txt"><span>Format: </span>{{book.Format}}</p>-->
+                                <p class="cat-txt"><span>Publisher: </span>{{book.volumeInfo.publisher}}</p>
+                                <p class="cat-txt"><span>Publication Date: </span>{{book.volumeInfo.publishedDate}}</p>
+                                <!--<p class="cat-txt"><span>Status: </span>disponibile</p>-->
+                                <!--<p class="cat-txt"><span>Quantity: </span>38</p>-->
+                                <p class="cat-txt" style="float: left;margin-right: 5px;"><span>Description: </span></p><p [innerHTML]="book.volumeInfo.description"></p>
+                            </div>
+                            <!--<ng-container *ngTemplateOutlet="comparePrices"></ng-container>-->
+                            <div class="col-md-3" *ngIf="book.id || book.Id">
+                                <div class="form-group col-md-12">
+                                    <input type="hidden" name="save" value="contact">
+                                    <input type="submit" class="btn btn-success login-btn" value="Compare Prices" (click)="comparePrices()">
+                                </div>
+                                <table *ngIf="bookComparePrices?.length > 0">
+                                    <thead>
+                                        <tr>
+                                            <td>Provider</td>
+                                            <td>Price</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of bookComparePrices">
+                                            <td class="compare-price"><a target="_blank" [href]="item.PrivderUrl" class="blue-text"> {{item.ProviderName}} </a>
+                                            <td>
+                                            <td class="compare-price"> <a target="_blank" [href]="item.PrivderUrl" class="text-right blue-text">{{item.Price}}</a> </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div *ngIf="books && books.length == 0">
+                                    <h4 class="text-center">No results found!</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 table-padding text-center" *ngIf="!book">
+                <h2>Loading book details...</h2>
+            </div>
+        </div>
+        <!-- goodread Result -->
+        <div class="row"  *ngIf="!book.id && book.Id">
+            <div class="col-md-12 table-padding">
+                <div class="panel panel-info-full">
+                    <div class="list-product">
+                        <div class="col-md-3 my-shop-animation">
+                            <div class="box-prod">
+                                <div class="box-img-book">
+
+                                    <div *ngIf="!book.LargeImageUrl.includes('nophoto'); then thenBlock else elseBlock"> ... </div>
+                                    <ng-template #thenBlock>
+                                        <div class="sell-book-image">
+                                            <img *ngIf="book.LargeImageUrl" [src]="book.LargeImageUrl" alt="{{book.Title}}" width="240" height="340">
+                                        </div>
+                                    </ng-template>
+                                    <ng-template #elseBlock>
+                                        <img src="../../images/no_book_cover.jpg" alt="{{book.Title}}" width="240" height="340">
+                                    </ng-template>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9 box-desc-detail">
+                            <h2 class="title-product">{{book.Title}}</h2>
+                            <p class="author-txt">
+                                <span>Author: </span><a class="blue-text ng-binding" *ngFor="let author of book.Authors">{{author.Name}}</a>
+                                <div class="box-btn-shop">
+                                    <div class="bt-img" *ngIf="!isInWishlist">
+                                        <button type="button" class="btn btn-add-cart" (click)="addToWishlist(book)"><i class="fa fa-heart"></i>Add to Wishlist</button>
+                                    </div>
+                                    <div class="bt-img">
+                                        <button type="button" class="btn btn-add-cart"><i class="fa fa-shopping-bag"></i>Contact Seller</button>
+                                    </div>
+                                </div>
+</div>
+                        <div class="col-md-12 detail-box-desc">
+                            <!--<div class="col-md-3"><h1 class="txt-info-vertical">Info</h1></div>-->
+
+                            <h2 class="headline" style="padding-left:15px;">Book information</h2>
+
+                            <div class="col-md-9 u-separator-right">
+                                <p><a class="grey-text">ISBN: </a><a class="blue-a ng-binding">{{book.Isbn}}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="grey-text">ISBN-13: </a><a class="blue-text ng-binding">{{book.Isbn13}}</a></p>
+                                <p class="cat-txt"><span>Pages: </span>{{book.Pages}}</p>
+                                <!--<p class="cat-txt"><span>Format: </span>{{book.Format}}</p>-->
+                                <p class="cat-txt"><span>Publisher: </span>{{book.Publisher}}</p>
+                                <p class="cat-txt"><span>Publication Date: </span>{{book.PublicationDate | date: 'dd.MM.yyyy'}}</p>
+                                <!--<p class="cat-txt"><span>Status: </span>disponibile</p>-->
+                                <!--<p class="cat-txt"><span>Quantity: </span>38</p>-->
+                                <p class="cat-txt" style="float: left;margin-right: 5px;"><span>Description: </span></p><p [innerHTML]="book.Description"></p>
+                            </div>
+                            <!--<ng-container *ngTemplateOutlet="comparePrices"></ng-container>-->
+                            <div class="col-md-3" *ngIf="book.id || book.Id">
+                                <div class="form-group col-md-12">
+                                    <input type="hidden" name="save" value="contact">
+                                    <input type="submit" class="btn btn-success login-btn" value="Compare Prices" (click)="comparePrices()">
+                                </div>
+                                <table *ngIf="bookComparePrices?.length > 0">
+                                    <thead>
+                                        <tr>
+                                            <td class="compare-price">Provider</td>
+                                            <td class="compare-price text-right">Price</td>
+                                            <td class="compare-price text-right">Condition</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of bookComparePrices">
+                                            <td class="compare-price"><a target="_blank" [href]="item.PrivderUrl" class="blue-text"> {{item.ProviderName}} </a>
+                                            <td>
+                                            <td class="compare-price"> <a target="_blank" [href]="item.PrivderUrl" class="text-right blue-text">{{item.Price}}</a> </td>
+                                            <td class="compare-price text-right"> {{item.Condition}} </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div *ngIf="books && books.length == 0">
+                                    <h4 class="text-center">No results found!</h4>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 table-padding text-center" *ngIf="!book">
+                <h2>Loading book details...</h2>
+            </div>
+        </div>
+    <!--<ng-template #comparePrices>
+        <div class="col-md-3" *ngIf="book.id || book.Id">
+            <div class="form-group col-md-12">
+                <input type="hidden" name="save" value="contact">
+                <input type="submit" class="btn btn-success login-btn" value="Compare Prices" (click)="comparePrices()">
+            </div>
+            <table *ngIf="bookComparePrices?.length > 0">
+                <thead>
+                    <tr>
+                        <td>Provider</td>
+                        <td>Price</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of bookComparePrices">
+                        <td class="compare-price"><a target="_blank" [href]="item.PrivderUrl" class="blue-text"> {{item.ProviderName}} </a>
+                        <td>
+                        <td class="compare-price"> <a target="_blank" [href]="item.PrivderUrl" class="text-right blue-text">{{item.Price}}</a> </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div *ngIf="books && books.length == 0">
+                <h4 class="text-center">No results found!</h4>
+            </div>
+        </div>
+    </ng-template>-->
+</section>

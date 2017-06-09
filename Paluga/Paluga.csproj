@@ -1,0 +1,240 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\app\home\components\**" />
+    <Compile Remove="wwwroot\app\home\views\**" />
+    <Compile Remove="wwwroot\app\school\components\**" />
+    <Compile Remove="wwwroot\app\school\views\**" />
+    <Compile Remove="wwwroot\app\user\components\**" />
+    <Compile Remove="wwwroot\app\user\views\**" />
+    <Content Remove="wwwroot\app\home\components\**" />
+    <Content Remove="wwwroot\app\home\views\**" />
+    <Content Remove="wwwroot\app\school\components\**" />
+    <Content Remove="wwwroot\app\school\views\**" />
+    <Content Remove="wwwroot\app\user\components\**" />
+    <Content Remove="wwwroot\app\user\views\**" />
+    <EmbeddedResource Remove="wwwroot\app\home\components\**" />
+    <EmbeddedResource Remove="wwwroot\app\home\views\**" />
+    <EmbeddedResource Remove="wwwroot\app\school\components\**" />
+    <EmbeddedResource Remove="wwwroot\app\school\views\**" />
+    <EmbeddedResource Remove="wwwroot\app\user\components\**" />
+    <EmbeddedResource Remove="wwwroot\app\user\views\**" />
+    <None Remove="wwwroot\app\home\components\**" />
+    <None Remove="wwwroot\app\home\views\**" />
+    <None Remove="wwwroot\app\school\components\**" />
+    <None Remove="wwwroot\app\school\views\**" />
+    <None Remove="wwwroot\app\user\components\**" />
+    <None Remove="wwwroot\app\user\views\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot/app\school\index.view.html" />
+    <Content Remove="wwwroot/app\search.rar" />
+    <Content Remove="wwwroot/app\user\profile.view.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\app\about\about.component.ts" />
+    <Content Include="wwwroot\app\about\index.view.html" />
+    <Content Include="wwwroot\app\account\account.service.ts" />
+    <Content Include="wwwroot\app\account\login.component.ts" />
+    <Content Include="wwwroot\app\account\login.view.html" />
+    <Content Include="wwwroot\app\account\register.component.ts" />
+    <Content Include="wwwroot\app\account\register.view.html" />
+    <Content Include="wwwroot\app\account\signup.component.ts" />
+    <Content Include="wwwroot\app\account\signup.view.html" />
+    <Content Include="wwwroot\app\app.component.js" />
+    <Content Include="wwwroot\app\app.component.js.map" />
+    <Content Include="wwwroot\app\app.component.spec.js" />
+    <Content Include="wwwroot\app\app.component.spec.js.map" />
+    <Content Include="wwwroot\app\app.component.ts" />
+    <Content Include="wwwroot\app\app.module.js" />
+    <Content Include="wwwroot\app\app.module.js.map" />
+    <Content Include="wwwroot\app\app.module.ts" />
+    <Content Include="wwwroot\app\app.routes.js" />
+    <Content Include="wwwroot\app\app.routes.js.map" />
+    <Content Include="wwwroot\app\app.routes.ts" />
+    <Content Include="wwwroot\app\base\api.service.ts" />
+    <Content Include="wwwroot\app\base\app-nav.component.ts" />
+    <Content Include="wwwroot\app\base\app-nav.view.html" />
+    <Content Include="wwwroot\app\base\base.component.ts" />
+    <Content Include="wwwroot\app\base\footer.component.ts" />
+    <Content Include="wwwroot\app\base\footer.view.html" />
+    <Content Include="wwwroot\app\book-data.ts" />
+    <Content Include="wwwroot\app\books.json" />
+    <Content Include="wwwroot\app\default-request-options.service.ts" />
+    <Content Include="wwwroot\app\hero-data.ts" />
+    <Content Include="wwwroot\app\heroes.json" />
+    <Content Include="wwwroot\app\home\home.component.js" />
+    <Content Include="wwwroot\app\home\home.component.js.map" />
+    <Content Include="wwwroot\app\home\home.component.ts" />
+    <Content Include="wwwroot\app\home\index.view.html" />
+    <Content Include="wwwroot\app\school\index.view.html" />
+    <Content Include="wwwroot\app\school\schools.component.js" />
+    <Content Include="wwwroot\app\school\schools.component.js.map" />
+    <Content Include="wwwroot\app\school\schools.component.ts" />
+    <Content Include="wwwroot\app\search\book.ts" />
+    <Content Include="wwwroot\app\search\contact.service.ts" />
+    <Content Include="wwwroot\app\search\in-memory-data.service.js" />
+    <Content Include="wwwroot\app\search\in-memory-data.service.js.map" />
+    <Content Include="wwwroot\app\search\in-memory-data.service.ts" />
+    <Content Include="wwwroot\app\search\index.view.html" />
+    <Content Include="wwwroot\app\search\search.component.html" />
+    <Content Include="wwwroot\app\search\search.component.ts" />
+    <Content Include="wwwroot\app\search\search.service.ts" />
+    <Content Include="wwwroot\app\user\profile.view.html" />
+    <Content Include="wwwroot\app\user\userProfile.component.js" />
+    <Content Include="wwwroot\app\user\userProfile.component.js.map" />
+    <Content Include="wwwroot\app\user\userProfile.component.ts" />
+    <Content Include="wwwroot\css\animate.css" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\core.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\list.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\path.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="wwwroot\css\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="wwwroot\css\icon.css" />
+    <Content Include="wwwroot\css\responsive.css" />
+    <Content Include="wwwroot\css\styles.css" />
+    <Content Include="wwwroot\fonts\css32e8.css" />
+    <Content Include="wwwroot\images\1.html" />
+    <Content Include="wwwroot\images\2.html" />
+    <Content Include="wwwroot\images\banner\banner-right.png" />
+    <Content Include="wwwroot\images\banner\banner3.png" />
+    <Content Include="wwwroot\images\banner\banner4.jpg" />
+    <Content Include="wwwroot\images\banner\book-banner1.jpg" />
+    <Content Include="wwwroot\images\banner\book-banner2.jpg" />
+    <Content Include="wwwroot\images\basket.png" />
+    <Content Include="wwwroot\images\blog\1a.jpg" />
+    <Content Include="wwwroot\images\blog\2a.jpg" />
+    <Content Include="wwwroot\images\blog\3a.jpg" />
+    <Content Include="wwwroot\images\blog\ibook.png" />
+    <Content Include="wwwroot\images\blog\ibook2.png" />
+    <Content Include="wwwroot\images\book-draw.jpg" />
+    <Content Include="wwwroot\images\book-drawing.jpg" />
+    <Content Include="wwwroot\images\books\1.png" />
+    <Content Include="wwwroot\images\books\10.png" />
+    <Content Include="wwwroot\images\books\11.png" />
+    <Content Include="wwwroot\images\books\12.png" />
+    <Content Include="wwwroot\images\books\13.png" />
+    <Content Include="wwwroot\images\books\14.png" />
+    <Content Include="wwwroot\images\books\15.png" />
+    <Content Include="wwwroot\images\books\2.png" />
+    <Content Include="wwwroot\images\books\3.png" />
+    <Content Include="wwwroot\images\books\4.png" />
+    <Content Include="wwwroot\images\books\5.png" />
+    <Content Include="wwwroot\images\books\6.png" />
+    <Content Include="wwwroot\images\books\7.png" />
+    <Content Include="wwwroot\images\books\8.png" />
+    <Content Include="wwwroot\images\books\9.png" />
+    <Content Include="wwwroot\images\discount_bags_opt.jpg" />
+    <Content Include="wwwroot\images\footer-background.jpg" />
+    <Content Include="wwwroot\images\footer_news1.jpg" />
+    <Content Include="wwwroot\images\footer_news2.jpg" />
+    <Content Include="wwwroot\images\footer_news3.jpg" />
+    <Content Include="wwwroot\images\lamp.png" />
+    <Content Include="wwwroot\images\logo.png" />
+    <Content Include="wwwroot\images\magazine-mockup.png" />
+    <Content Include="wwwroot\images\magazine-mockup2.png" />
+    <Content Include="wwwroot\images\map.png" />
+    <Content Include="wwwroot\images\marker.png" />
+    <Content Include="wwwroot\images\open-book.png" />
+    <Content Include="wwwroot\images\patterns\man.png" />
+    <Content Include="wwwroot\images\patterns\pattern-1.png" />
+    <Content Include="wwwroot\images\people-ebook.jpg" />
+    <Content Include="wwwroot\images\rating-star.png" />
+    <Content Include="wwwroot\images\sign.png" />
+    <Content Include="wwwroot\images\slide-book1.png" />
+    <Content Include="wwwroot\images\slide-book2.png" />
+    <Content Include="wwwroot\images\slider\mini-slider\1.jpg" />
+    <Content Include="wwwroot\images\slider\mini-slider\2.jpg" />
+    <Content Include="wwwroot\images\slider\mini-slider\3.jpg" />
+    <Content Include="wwwroot\images\slider\mini-slider\thumb1.html" />
+    <Content Include="wwwroot\images\slider\mini-slider\thumb2.html" />
+    <Content Include="wwwroot\images\slider\mini-slider\thumb3.html" />
+    <Content Include="wwwroot\images\slider\reader.jpg" />
+    <Content Include="wwwroot\images\slider\slider2.jpg" />
+    <Content Include="wwwroot\images\slider\slider3.jpg" />
+    <Content Include="wwwroot\images\slider\slider4.jpg" />
+    <Content Include="wwwroot\images\slider\slide_column\slider3.jpg" />
+    <Content Include="wwwroot\images\slider\slide_column\slider4.jpg" />
+    <Content Include="wwwroot\images\staff-bg.jpg" />
+    <Content Include="wwwroot\images\store-book.jpg" />
+    <Content Include="wwwroot\images\store.jpg" />
+    <Content Include="wwwroot\images\team1.jpg" />
+    <Content Include="wwwroot\images\team2.jpg" />
+    <Content Include="wwwroot\images\top-book1.png" />
+    <Content Include="wwwroot\images\top-book2.png" />
+    <Content Include="wwwroot\images\top-book3.png" />
+    <Content Include="wwwroot\images\top-book4.png" />
+    <Content Include="wwwroot\images\top-book5.png" />
+    <Content Include="wwwroot\index.html" />
+    <Content Include="wwwroot\main.js" />
+    <Content Include="wwwroot\main.js.map" />
+    <Content Include="wwwroot\main.ts" />
+    <Content Include="wwwroot\systemjs-angular-loader.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\systemjs.config.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseLayer\DatabaseLayer.csproj" />
+    <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+
+</Project>
