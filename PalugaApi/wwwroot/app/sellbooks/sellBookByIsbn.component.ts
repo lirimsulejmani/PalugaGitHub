@@ -110,13 +110,7 @@ export class SellBookByIsbnComponent implements OnInit {
             });
     }
 
-    upload() {
-        this.makeFileRequest(this.apiEndPoint, [], this.filesToUpload).then((result) => {
-            console.log(result);
-        }, (error) => {
-            console.error(error);
-        });
-    }
+ 
 
     fileChangeEvent(fileInput: any) {
         debugger;
